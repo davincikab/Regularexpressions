@@ -40,5 +40,14 @@ match_6 = re.sub(r'python','JavaScript', string_6, flags=re.IGNORECASE)
 print(match_6)
 
 #  Workig with groups
-match_7 = re.sub(r't([0-9])([0-9])',r't\2\1',"t12 t43 t56")
+match_7 = re.sub(r't([0-9])([0-9])',r't\2\1',"t10 t43 t56")
 print(match_7)
+
+# Replacing using functions
+items = ['zero', 'one', 'two']
+match_8 = re.sub(r"a\[([0-3])\]", lambda match: items[int(match.group(1))], "Items: a[0], a[1] and a[2]")
+print(match_8)
+
+
+match_9 = re.sub(r"([abc])", lambda string: string.group(1).upper(), "abc, kabc")
+print(match_9)
