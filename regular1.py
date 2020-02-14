@@ -30,3 +30,11 @@ ppatern = re.compile(r"(.*\d+)")
 matches = ppatern.search(string_5)
 print(matches.group(0))
 print(matches.group(1))
+
+# Flags: re.I,re.M, re.X
+match_5 = re.search(r"bc", "AABC", flags=re.IGNORECASE)
+
+# Replace a string using a re.sub
+string_6 = "Working with python is great.Python is great."
+match_6 = re.sub(r'python','JavaScript', string_6, flags=re.IGNORECASE)
+print(match_6)
