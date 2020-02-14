@@ -51,3 +51,14 @@ print(match_8)
 
 match_9 = re.sub(r"([abc])", lambda string: string.group(1).upper(), "abc, kabc")
 print(match_9)
+
+# Non overlapping matches: findall or finditer
+results = re.finditer(r"t([0-9]{0,3})", "t10 t43 t56")
+print([result.group(1) for result in results])
+
+# Checking allowed characters
+def is_allowed(string):
+    results = re.search(r"[^0-9a-zA-Z]", string)
+    return not bool(results)
+
+print(is_allowed("09Homeishome"))
