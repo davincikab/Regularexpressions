@@ -38,3 +38,7 @@ match_5 = re.search(r"bc", "AABC", flags=re.IGNORECASE)
 string_6 = "Working with python is great.Python is great."
 match_6 = re.sub(r'python','JavaScript', string_6, flags=re.IGNORECASE)
 print(match_6)
+
+#  Workig with groups
+match_7 = re.sub(r't([0-9])([0-9])',r't\2\1',"t12 t43 t56")
+print(match_7)
