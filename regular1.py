@@ -62,3 +62,9 @@ def is_allowed(string):
     return not bool(results)
 
 print(is_allowed("09Homeishome"))
+
+# Split a string according to character match
+new_string = re.split(r",", "David, Njeri")
+print(new_string)
+
+# Grouping
