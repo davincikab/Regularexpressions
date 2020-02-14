@@ -5,10 +5,16 @@ string = "123Kenya"
 
 # Matching at the start of string
 match = re.match(pattern, string)
-print(match.group())
+# print(match.group())
 
 # Match the regex anywhere in the string
 pattern_2 = r"Kenya"
 string_2 = "Welcome to Kenya. It is Kenya"
-match2 = re.search(pattern_2,string_2)
-print(match2.group())
+
+match_2 = re.search(pattern_2,string_2)
+print(match_2.group(0))
+
+# Using search to specify begining of a string
+pattern_3 = r"^Kenya"
+match_3 =  re.search(pattern_3,string_2)
+print(match_3.group())
