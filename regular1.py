@@ -67,4 +67,12 @@ print(is_allowed("09Homeishome"))
 new_string = re.split(r",", "David, Njeri")
 print(new_string)
 
-# Grouping
+# Named Grouping
+my_name = re.search(r"My name is (?P<name>[a-zA-Z].+)", "My name is Daudi Njeri")
+print(my_name.groups())
+
+# Non capturring groups (?:)
+match_10 = re.match(r"(\d+)(\+(\d+))?", "22+33")
+match_non_group = re.match(r"(\d+)(?:\+(\d+))?", "22+33")
+print(match_10.groups())
+print(match_non_group.groups())
