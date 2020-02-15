@@ -82,3 +82,13 @@ special_match = re.search(r"(\[abc\])", "12[abc]45")
 special_match2 = re.search(re.escape(r"[abc]"),"12[abc]45")
 print(special_match.group())
 print(special_match2.group())
+
+# Matching regex on specific locations in string
+import regex as re
+rx = re.compile(r"""
+    \([^()]*\)(*SKIP)(*FAIL)
+    | "David"
+    """, re.VERBOSE)
+string_name = "My name is David (I am David)"
+name = rx.findall()
+print(name)
