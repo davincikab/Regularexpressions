@@ -84,11 +84,24 @@ print(special_match.group())
 print(special_match2.group())
 
 # Matching regex on specific locations in string
-import regex as re
-rx = re.compile(r"""
-    \([^()]*\)(*SKIP)(*FAIL)
-    | "David"
-    """, re.VERBOSE)
-string_name = "My name is David (I am David)"
-name = rx.findall()
-print(name)
+# import regex as re
+# rx = re.compile(r"""
+#     \([^()]*\)(*SKIP)(*FAIL)
+#     | "David"
+#     """, re.VERBOSE)
+# string_name = "My name is David (I am David)"
+# name = rx.findall()
+# print(name)
+
+# Using the re.finditer method
+string_iter  = "Should I show the shore on the showground or showroom"
+ptta  = "sho\w+"
+
+for match in re.finditer(ptta, string_iter, re.I):
+    sStart = match.start()
+    sEnd = match.end()
+    sGroup = match.group()
+
+    print("Match '{}' found at: {} {}".format(sGroup,sStart,sEnd))
+
+
