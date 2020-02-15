@@ -76,3 +76,9 @@ match_10 = re.match(r"(\d+)(\+(\d+))?", "22+33")
 match_non_group = re.match(r"(\d+)(?:\+(\d+))?", "22+33")
 print(match_10.groups())
 print(match_non_group.groups())
+
+#Escapaing special characters
+special_match = re.search(r"(\[abc\])", "12[abc]45")
+special_match2 = re.search(re.escape(r"[abc]"),"12[abc]45")
+print(special_match.group())
+print(special_match2.group())
